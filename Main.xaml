@@ -560,7 +560,7 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Send mail &quot;+dt_EmailMarketing.Rows(0).Item(&quot;Email Subject&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)+&quot;  Success&quot;]">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Send mail &quot;+dt_EmailMarketing.Rows(0).Item(&quot;Email Subject&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString +&quot;  &quot;+CurrentRow.Item(&quot;Sub Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)+&quot;  Success&quot;]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
