@@ -526,10 +526,15 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[dt_EmailMarketing.Rows(0).Item(&quot;Email Body&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)]" Cc="[dt_EmailMarketing.Rows(0).Item(&quot;Email CC&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Port="25" SecureConnection="None" SecurePassword="[password]" Server="10.25.69.191" Subject="[dt_EmailMarketing.Rows(0).Item(&quot;Email Subject&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString +&quot;  &quot;+CurrentRow.Item(&quot;Sub Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)]" To="[dt_EmailMarketing.Rows(0).Item(&quot;Email To&quot;).ToString]">
+                                          <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[dt_EmailMarketing.Rows(0).Item(&quot;Email Body&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)+&quot;&lt;br&gt;&lt;img src=Image.jpg&gt;&quot;]" Cc="[dt_EmailMarketing.Rows(0).Item(&quot;Email CC&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Port="25" SecureConnection="None" SecurePassword="[password]" Server="10.25.69.191" Subject="[dt_EmailMarketing.Rows(0).Item(&quot;Email Subject&quot;).ToString.Replace(&quot;[BU]&quot;, CurrentRow.Item(&quot;Bu&quot;).ToString +&quot;  &quot;+CurrentRow.Item(&quot;Sub Bu&quot;).ToString).Replace(&quot;[Open item]&quot;,strDateOpenItem)]" To="[dt_EmailMarketing.Rows(0).Item(&quot;Email To&quot;).ToString]">
                                             <ui:SendMail.Files>
                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                <InArgument x:TypeArguments="x:String">[strPathFile]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPathFile" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String">
+                                                  <Literal x:TypeArguments="x:String">Image.jpg</Literal>
+                                                </InArgument>
                                               </scg:List>
                                             </ui:SendMail.Files>
                                           </ui:SendMail>
